@@ -1,0 +1,63 @@
+html {
+  font-size: 100%;
+}
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-size: 1.0rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.login {
+  /*max-width: 300px;*/
+  text-align: center;
+  width: 100%;
+}
+.form-control,
+.btn {
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: 0;
+  padding: 1rem;
+  width: 100%;
+}
+.btn{
+    width: 40%;
+    display: inline-block;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+.form-control:focus {
+  border: 1px solid coral;
+  box-shadow: 0 0 0 5px coral;
+}
+
+.btn {
+  background-color: coral;
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #f3541c;
+}
+.form-group {
+  margin: 1rem 0;
+}
+
+.muted {
+  color: gray;
+  background-color: #f5f5f5;
+}
+.display{
+    padding-bottom: 0.5rem; 
+    }

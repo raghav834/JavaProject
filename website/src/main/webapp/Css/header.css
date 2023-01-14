@@ -1,0 +1,49 @@
+:root {
+  --primary-color: bisque;
+  --secondary-color: coral;
+}
+* {
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0;
+}
+
+.with-logo {
+    background-color: var(--primary-color) ;
+    display: flex;
+    justify-content: space-around;
+align-items: center;
+}
+
+.primary-icon{
+    height: 3.5rem;
+}
+
+.nav-bar{
+    list-style: none;
+}
+
+.nav-bar .nav-item {
+    display: inline-block;
+    padding: 2rem 1rem ;
+    padding-left: 3rem;
+    
+}
+#size ,.nav-item {
+      font-size: 1.2rem;
+}
+
+a {
+    color:var(--secondary-color);
+    text-decoration: none;
+  
+    
+}
+
+a:hover {
+    color: #b0b0b0;
+}
+
+.muted {
+    text-align: center;
+}

@@ -1,14 +1,8 @@
-<%-- 
-    Document   : login
-    Created on : 08-Jan-2023, 11:33:16 pm
-    Author     : raghav
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="WEB-INF/jspf/Header.jspf" %>
-
+ ${pageContext.response.setHeader("Cache-Control","no-cache,no-store,must-re-validate")}
         <ul class="nav-bar">
             <li class="nav-item"><a href="home.jsp">Home</a></li>
            <li class="nav-item"><a href="#">About Us</a></li>
@@ -50,26 +44,29 @@
       <button class="btn" type="submit">Sign in</button>
       <a href="signup.jsp"><button class="btn" type="button">Register</button></a>
     </form></div>
-        
+    
+    <c:choose>
+        <c:when test="${sessionScope.email==null}">
         <sql:setDataSource driver="com.mysql.jdbc.Driver" var="db" url="jdbc:mysql://localhost:3306/data" user="root" password="root" />
 <sql:query var="rs" dataSource="${db}">select * from userdata</sql:query>
  
  <c:forEach items="${rs.rows}" var="row">
- 
-     <c:choose>
-         <c:when test="${row.email == param.email && row.password == param.password}">
+         <c:if test="${row.email == param.email && row.password == param.password}">
              <c:set var="email" scope="session" value="${row.email}"></c:set>
              <c:set var="first_name" scope="session" value="${row.first_name}"></c:set>
              <c:set var="last_name" scope="session" value="${row.last_name}"></c:set>
              <c:set var="email" scope="session" value="${row.email}"></c:set>
              <c:set var="registertime" scope="session" value="${row.Registeredtime}"></c:set>
              ${pageContext.response.sendRedirect("welcome.jsp")}
-         </c:when>
-         <c:otherwise>
-         </c:otherwise>
-        </c:choose>
- 
- </c:forEach>
+         </c:if>
+      
+   </c:forEach>
+    </c:when>
+<c:otherwise>
+    <center>${pageContext.out.println("Please Enter Correct Details")}</center>
+</c:otherwise>
+    
+    </c:choose>
 
  
         

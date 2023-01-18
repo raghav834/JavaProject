@@ -10,6 +10,7 @@
 <%@include file="WEB-INF/jspf/Header.jspf" %>
         <ul class="nav-bar">
             <li class="nav-item"><a href="userprofile.jsp">My Profile</a></li>
+            <li class="nav-item"><a href="allprofiles.jsp">All Data</a></li>
            <li class="nav-item"><a href="#">About Us</a></li>
            <li class="nav-item"><a href="home.jsp">Logout</a></li>
             

@@ -9,4 +9,7 @@ website maven Project using server Apache Tomcat 10.1
             Database name -: data
 
 
-        Table name -: userdata columns :- sr_no, first_name, last_name, email, password, Registeredtime
+        Table name -: userdata 
+        
+                      
+                      columns :- sr_no, first_name, last_name, email, password, Registeredtime
